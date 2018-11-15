@@ -13,7 +13,8 @@ module Encryptable
     def encrypt_attributes(*attributes, type: nil)
       attributes.each do |attribute|
         define_method(attribute) do
-          instance_variable_get("@#{attribute}") || instance_variable_set("@#{attribute}", read_encrypted_attribute(attribute))
+          (instance_variable_defined?("@#{attribute}") && instance_variable_get("@#{attribute}")) ||
+            instance_variable_set("@#{attribute}", read_encrypted_attribute(attribute))
         end
 
         define_method("#{attribute}=") do |value|
