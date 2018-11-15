@@ -1,4 +1,4 @@
-require "encryptable/version"
+require "encryptable/railtie"
 
 module Encryptable
   # Your code goes here...
