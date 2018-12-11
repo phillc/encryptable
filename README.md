@@ -1,28 +1,11 @@
 # Encryptable
-Short description and motivation.
+Stripped down encryption
 
 ## Usage
-How to use my plugin.
-
-## Installation
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'encryptable'
-```
-
-And then execute:
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install encryptable
-```
-
-## Contributing
-Contribution directions go here.
+Binary columns for *_iv and *_encrypted
+Secrets
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+This is based on the work of the ruby gem [attr_encrypted](https://github.com/attr-encrypted/attr_encrypted)
