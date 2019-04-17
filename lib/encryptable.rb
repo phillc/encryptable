@@ -84,4 +84,15 @@ module Encryptable
       ActiveModel::Type.const_get(type_name.to_s.classify).new
     end
   end
+
+  module Table
+    def encryptable(attribute)
+      binary("#{attribute}_encrypted")
+      binary("#{attribute}_iv")
+    end
+  end
+end
+
+ActiveRecord::ConnectionAdapters::Table.class_eval do
+  include Encryptable::Table
 end
